@@ -1,0 +1,49 @@
+<!-- Problem For 12/01/2022 -->
+<!-- Problem 1 Print all even number from 0 to 10-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Problem 1 Print all even number from 0 to 10</h1>
+    <div id="print">
+    </div>
+    <div>
+        <h2>
+            ==================================================
+        </h2>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    "use strict";
+
+    function myFn() {
+        var arr = [];
+        var test = 0;
+        for (var i = 0; i < 10; i++) {
+            test = i % 2;
+            if (test === 0) {
+                arr.push(i);
+                console.log(i);
+            }
+
+        }
+        document.getElementById("print").innerHTML = arr;
+
+    }
+
+    myFn();
+
+
+</script>
