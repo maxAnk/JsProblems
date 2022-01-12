@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Create a length converter function Km to Meter
+    </h1>
+
+    <input type="number" id="linput" onkeyup="lenghtConverter()" /> Km
+
+    <h2 id="output">
+
+    </h2>
+
+</body>
+
+</html>
+
+<script>
+    "use strict";
+
+    function lenghtConverter() {
+
+        var userinput = document.getElementById("linput").value;
+        document.getElementById("output").innerHTML = userinput * 1000 + "M";
+
+    }
+
+
+
+</script>
