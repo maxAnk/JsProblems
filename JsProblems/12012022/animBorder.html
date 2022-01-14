@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #181818;
+    }
+
+    .frem {
+        width: 200px;
+        height: 200px;
+        box-shadow: 16px 14px 20px #0000008c;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .frem::after {
+        content: "Anim Border";
+        width: 190px;
+        height: 190px;
+        background: #101010;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        color: #cdf55e;
+        font-size: larger;
+        letter-spacing: 5px;
+        box-shadow: inset 20px 20px 20px #0000008c;
+    }
+
+    .rot {
+        width: 30rem;
+        height: 30rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ff0256;
+        animation: rotate 4s linear infinite;
+    }
+
+    .rot span {
+        width: 30rem;
+        height: 2rem;
+        background: #e4f871;
+        position: absolute;
+    }
+
+    .rot span:nth-child(1) {
+        transform: rotate(90deg);
+    }
+
+    .rot span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .rot span:nth-child(3) {
+        transform: rotate(136deg);
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="frem">
+        <div class="rot">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>

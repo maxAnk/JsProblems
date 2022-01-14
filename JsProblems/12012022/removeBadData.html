@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Create a function that filters out negative numbers
+    </h1>
+    <div>
+        <input type="text" id="arrInput" />
+        <button onclick="storeArray()">Store Array</button>
+        <button onclick="removeBadData()">Create right value Array</button>
+    </div>
+    <label>You created Array</label>
+    <h2 id="usArr"></h2>
+    <label>Perfect Array</label>
+    <h2 id="data"></h2>
+    <label>Remove -ve Data</label>
+    <h2 id="removeData"></h2>
+</body>
+
+</html>
+
+<script>
+    "use script";
+    var userArray = [];
+    const storeArray = () => {
+        userArray.push(document.getElementById('arrInput').value);
+
+        document.getElementById('arrInput').value = '';
+
+        document.getElementById('arrInput').focus();
+
+    }
+
+
+    const removeBadData = () => {
+
+
+
+        const removingBadDataArr = userArray.filter(x => x > 0);
+
+        const removedData = userArray.filter(x => x < 0);
+
+        if (userArray.length > 0) {
+
+            document.getElementById("data").innerHTML = JSON.stringify(removingBadDataArr);
+
+            document.getElementById("removeData").innerHTML = JSON.stringify(removedData);
+
+            document.getElementById("usArr").innerHTML = JSON.stringify(userArray);
+        }
+
+    }
+
+    removeBadData(arr);
+
+</script>
