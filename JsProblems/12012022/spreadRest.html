@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Spread and rest
+    </h1>
+</body>
+
+</html>
+
+<script>
+    //es5
+    //old way
+    function sum(a, b, c) {
+        console.log(a + b + c);
+
+    }
+
+    sum(1, 2, 3);
+
+    var arr = [1, 2, 3];
+
+    sum.apply(null, arr);
+
+
+    // +++++++++++++++++++++++++++++++++
+
+    //es6 
+    // spread operator use case 1
+    // replace apply()
+
+    function esum(a, b, c) {
+        console.log(a + b + c);
+
+    }
+
+    var earr = [5, 2, 3];
+
+    esum(...earr); // spread operator
+
+    // spread operator use case 2
+    // replace Concate()
+
+    let arr1 = [1, 2, 3];
+
+    let arr2 = [4, 5, 6];
+
+    // now I need to combine this two array
+
+    //arr1 = arr1.concat(arr2); // es5 way 
+
+    arr1 = [...arr1, ...arr2]; // es6 way we can add many more array
+
+    console.log(arr1);
+
+    // ++++++++++++++++++++++++++++++++++
+
+
+    // spread operator use case 3
+    // replace copy()
+
+    let arrc1 = [1, 2, 3];
+    //let arrc2 = arrc1;
+
+    //console.log("arrc2", arrc2); // arrc2  [1, 2, 3]
+
+    // BUT i want some more value in this only arrc2 
+
+    //arrc2.push(4, 5);
+
+    //console.log("arrc2 add45", arrc2); //[1, 2, 3, 4, 5]
+    //console.log("arrc1", arrc1); //[1, 2, 3, 4, 5] //wrong
+
+    //solution
+
+    let arrc2 = [...arrc1, 4, 5]; // spread operator
+
+    console.log(arrc2)
+    console.log(arrc1)
+
+
+
+    // REST 
+
+    function sum(...inputs) {
+        console.log(inputs)
+        console.log(...inputs)
+
+        let total = 0;
+        for (let i of inputs) { //for of loop
+            total += i;
+        }
+
+        console.log(total);
+    }
+    sum(1, 2, 3, 4, 5, 6); // [1,2,3,4,5,6]
+
+
+
+</script>

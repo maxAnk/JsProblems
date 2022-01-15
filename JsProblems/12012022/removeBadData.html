@@ -13,14 +13,16 @@
         Create a function that filters out negative numbers
     </h1>
     <div>
-        <input type="text" id="arrInput" />
-        <button onclick="storeArray()">Store Array</button>
+        <input type="text" id="arrInput" onkeypress="enterKeyPressed(event)" />
+        <!-- <button onclick="storeArray()">Store Array</button> -->
         <button onclick="removeBadData()">Create right value Array</button>
     </div>
     <label>You created Array</label>
     <h2 id="usArr"></h2>
     <label>Perfect Array</label>
     <h2 id="data"></h2>
+    <label>Sum</label>
+    <h2 id="sum"></h2>
     <label>Remove -ve Data</label>
     <h2 id="removeData"></h2>
 </body>
@@ -50,6 +52,13 @@
 
         if (userArray.length > 0) {
 
+            let total = 0;
+
+            for (let i of removingBadDataArr) {
+                total += parseInt(i);
+            }
+            document.getElementById("sum").innerHTML = total;
+
             document.getElementById("data").innerHTML = JSON.stringify(removingBadDataArr);
 
             document.getElementById("removeData").innerHTML = JSON.stringify(removedData);
@@ -59,6 +68,16 @@
 
     }
 
-    removeBadData(arr);
+    // removeBadData(arr);
+
+    function enterKeyPressed(event) {
+        if (event.keyCode == 13) {
+            console.log("Enter key is pressed");
+            storeArray();
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 </script>
