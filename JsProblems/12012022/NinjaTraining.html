@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Q1. 20/01/2022 <br>
+        Given an array of numbers, return an array which contains all the even numbers in the original array, which also
+        have even indices.
+    </h1>
+
+
+    <h1>
+        Q2. Create a function that takes three arguments prob, prize, pay and returns true if prob * prize > pay;
+        otherwise
+        return false.
+    </h1>
+    <span>
+
+        To illustrate:
+
+        profitableGamble(0.2, 50, 9)
+        ... should yield true, since the net profit is 1 (0.2 * 50 - 9), and 1 > 0.
+    </span>
+
+
+    Examples
+    profitableGamble(0.2, 50, 9) ➞ true
+
+    profitableGamble(0.9, 1, 2) ➞ false
+
+    profitableGamble(0.9, 3, 2) ➞ true
+    Notes
+    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following
+    manner: net_outcome = probability_of_winning * prize - cost_of_playing.
+
+
+</body>
+
+</html>
+
+<script>
+    "use strict"
+
+    const getOnlyEvens = (array) => {
+
+        const evenArray = array.filter(even);
+
+        console.log(evenArray)
+
+        return evenArray;
+
+    }
+
+    const even = (x) => {
+
+        let y = x % 2;
+
+        if (y === 0) {
+            return x
+        }
+    }
+
+
+
+    getOnlyEvens([1, 2, 3, 4])   // [2, 4]
+
+    getOnlyEvens([1, 3, 3, 5, 5])     //[]
+
+</script>
+
+<script>
+    const profitableGamble = (prob, prize, pay) => {
+
+        let x = prob * prize;
+        if (x > pay) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    console.log(profitableGamble(0.2, 50, 9)) // true
+
+    console.log(profitableGamble(0.9, 1, 2)) // false
+
+    console.log(profitableGamble(0.9, 3, 2)) //true
+
+</script>
