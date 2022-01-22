@@ -40,6 +40,42 @@
     A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following
     manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
+    <div>
+        According to the lodash documentation, _.compact creates an array with all falsey values removed. The values
+        false, null, 0, "", undefined, and NaN are falsey.
+
+        Your task is to build this helper function without using lodash. You will write a function that receives an
+        array and removes all falsey values.
+
+        Examples
+        <h2>
+            compact([0, 1, false, 2, "", 3]); // => [1, 2, 3]
+        </h2>
+        Notes
+        Do not attempt to import lodash; you are simply writing your own version.
+        This entire series of challenges can be found here.
+    </div>
+
+
+    <div>
+        <h2>
+            Write a function that takes a number and returns the perimeter of either a circle or a square.
+            The input will be in the form (letter l, number num) where the letter will be either "s" for square, or "c"
+            for circle,
+            and the number will be the side of the square or the radius of the circle.
+        </h2>
+        <h3>
+            Perimeter of a square: 4 * side.
+            Perimeter of a circle: 6.28 * radius.
+        </h3>
+        <h3>
+            perimeter("s", 7) ➞ 28
+
+            perimeter("c", 4) ➞ 25.12
+
+            perimeter("c", 9) ➞ 56.52
+        </h3>
+    </div>
 
 </body>
 
@@ -92,5 +128,41 @@
     console.log(profitableGamble(0.9, 1, 2)) // false
 
     console.log(profitableGamble(0.9, 3, 2)) //true
+
+</script>
+
+<script>
+    // compact([0, 1, false, 2, "", 3]); // => [1, 2, 3]
+
+    const removeFlseElem = (arr) => {
+
+        const rightArr = arr.filter(x => x > 0);
+
+        return rightArr;
+
+    }
+
+    console.log(removeFlseElem([0, 1, false, 2, "", 3]))
+
+
+</script>
+
+<script>
+    const perimeter = (x, y) => {
+        if (x === "s") {
+            let square = 4 * y;
+            return square;
+        } else if (x === "c") {
+            let circle = 6.28 * y;
+            return circle;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(perimeter("s", 7));
+    console.log(perimeter("c", 4));
+    console.log(perimeter("c", 9));
+
 
 </script>
