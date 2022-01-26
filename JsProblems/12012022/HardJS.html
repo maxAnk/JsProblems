@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: aqua;">
+
+    <div style="background-color: bisque;">
+        <h1>
+            Q.1
+        </h1>
+        <h2>
+            Create a function that takes a single Hexadecimal number as an argument and returns the equivalent
+            binary number to light the display.
+        </h2>
+        <h3>
+            Example of haxaDecimal : 7B316, 6F16, 4B2A16, 7B316 , 6F16 , 4B2A16
+        </h3>
+
+
+    </div>
+    <div style="background-color:cadetblue; height: 300px; text-align: center; padding-top: 5%;">
+        <div style="margin-bottom: 5%;">
+            <label for="hexinput">Please provide hexadecimal number</label>
+            <input type="text" id="hexinput">
+            <button onclick="hextobinary()">Convert</button>
+        </div>
+        <!-- <h1 id="resultH"></h1> -->
+        <div id="resultH" style="padding-left: 30%;">
+            <div id="rFrem" class="frem" data-content="Result">
+                <div class="rot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    "use script";
+
+    (function () {
+        var link = document.getElementById('resultH');
+        link.style.display = 'none';
+    })();
+
+    const hexBinTable = [
+        {
+            "0": "0000",
+            "1": "0001",
+            "2": "0010",
+            "3": "0011",
+            "4": "0100",
+            "5": "0101",
+            "6": "0110",
+            "7": "0111",
+            "8": "1000",
+            "9": "1001",
+            "A": "1010",
+            "B": "1011",
+            "C": "1100",
+            "D": "1101",
+            "E": "1110",
+            "F": "1111",
+
+        }
+    ]
+    //7B316
+    const hextobinary = () => {
+        let param = document.getElementById("hexinput").value;
+
+        let convertArry = [...param];
+
+        var size = Object.keys(hexBinTable[0]).length;
+
+        let resultArry = []
+        for (let i = 0; i < convertArry.length; i++) {
+
+            for (let j = 0; j < size; j++) {
+                if (convertArry[i] == Object.keys(hexBinTable[0])[j]) {
+                    resultArry.push(Object.values(hexBinTable[0])[j])
+                }
+            }
+
+
+        }
+        let result = resultArry.toString().replace(/,/g, '');
+        document.getElementById("rFrem").setAttribute("data-content", result);
+        var link = document.getElementById('resultH');
+        link.style.display = 'block';
+
+
+    }
+
+
+
+</script>
+
+<style>
+    /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #181818;
+    } */
+
+    .frem {
+        width: 400px;
+        height: 200px;
+        box-shadow: 16px 14px 20px #0000008c;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .frem::after {
+        content: attr(data-content);
+        width: 390px;
+        height: 190px;
+        background: #101010;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        color: #cdf55e;
+        font-size: larger;
+        letter-spacing: 5px;
+        box-shadow: inset 20px 20px 20px #0000008c;
+    }
+
+    .rot {
+        width: 30rem;
+        height: 30rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ff0256;
+        animation: rotate 4s linear infinite;
+    }
+
+    .rot span {
+        width: 30rem;
+        height: 2rem;
+        background: #e4f871;
+        position: absolute;
+    }
+
+    .rot span:nth-child(1) {
+        transform: rotate(90deg);
+    }
+
+    .rot span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .rot span:nth-child(3) {
+        transform: rotate(136deg);
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+</style>
