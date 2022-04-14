@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Mubashir needs your help to find out number of animals hidden in a given string txt.
+
+        You are provided with an array of animals given below:
+
+        animals = ["dog", "cat", "bat", "cock", "cow", "pig",
+        "fox", "ant", "bird", "lion", "wolf", "deer", "bear",
+        "frog", "hen", "mole", "duck", "goat"]
+        Rule: Return the maximum number of animal names. See the below example:
+
+        txt = "goatcode"
+
+        countAnimals(txt) ➞ 2
+        // First animal = "dog"
+        // Remaining string = "atcoe",
+        // Second animal = "cat".
+        // count = 2 (correct)
+
+        // If you got a "goat" first time
+        // remaining string = "code",
+        // no animal will be found during next time.
+        // count = 1 (wrong)
+        Examples
+        countAnimals("goatcode") ➞ 2
+        // "dog", "cat"
+
+        countAnimals("cockdogwdufrbir") ➞ 4
+        // "cow", "duck", "frog", "bird"
+
+        countAnimals("dogdogdogdogdog") ➞ 5
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var animals = ["dog", "cat", "bat", "cock", "cow", "pig",
+        "fox", "ant", "bird", "lion", "wolf", "deer", "bear",
+        "frog", "hen", "mole", "duck", "goat"];
+
+
+    const findAnimals = (param) => {
+        var resultArray = animals.filter(x => x === param);
+        return resultArray
+    }
+
+    console.log(findAnimals("goat"))
+
+    console.log("Animal Count", findAnimals("dog").length)
+
+    function reduceTest() {
+
+        var x = [1, 2, 3, 4];
+        var y = x.reduce(function (total, value, index, array) {
+            return total + value;
+
+        }, 0);
+        console.log(y);
+    }
+
+    // function sum(total, value, index, array) {
+
+    //     var result = total + value;
+
+
+    // }
+
+    reduceTest();
+
+
+
+    var animals = ["dog", "cat", "bat", "cock", "cow", "pig",
+        "fox", "ant", "bird", "lion", "wolf", "deer", "bear",
+        "frog", "hen", "mole", "duck", "goat"]
+
+    function countAnimals(txt) {
+        if (!txt.length) return 0;
+        return animals.reduce((max, anml) => {
+            let rmv = remove(txt, anml);
+            if (txt.length - rmv.length != anml.length) return max;
+            let next = 1 + countAnimals(rmv);
+            return Math.max(max, next);
+        }, 0)
+    }
+    const remove = (txt, a) => {
+        for (let c of a) txt = txt.replace(c, '');
+        return txt;
+    }
+
+
+    // function countAnimals(txt) {
+    //     let counts = [];
+
+    //     function f(t, c) {
+    //         for (let a of animals) {
+    //             let s = t;
+    //             for (let x of a) s = s.replace(x, "");
+    //             if (s.length + a.length === t.length) f(s, c + 1);
+    //         }
+    //         counts.push(c);
+    //     }
+
+    //     f(txt, 0);
+    //     return Math.max(...counts);
+    // }
+
+
+    console.log(countAnimals("goatcode"))
+
+</script>

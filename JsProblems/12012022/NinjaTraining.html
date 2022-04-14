@@ -77,6 +77,18 @@
         </h3>
     </div>
 
+
+    <div style="background-color: burlywood;">
+        <h1>1) Turn an array of numbers into a total of all the numbers</h1>
+        <div>
+            function total(arr) {
+            // your code here
+            }
+
+            console.log(total([1,2,3])); // 6
+        </div>
+    </div>
+
 </body>
 
 </html>
@@ -165,4 +177,92 @@
     console.log(perimeter("c", 9));
 
 
+</script>
+
+
+<script>
+    const array = [2, 3, 4, 6, 2];
+
+    function reducer(previous, current, index, array) {
+        const returns = previous + current;
+        console.log(`previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`);
+        return returns;
+    }
+
+    array.reduce(reducer);
+    //2 3 1 5
+    //5 4 2 9
+    //9 6 3 15
+    //15 2 4 17
+    //if initial value give then first previoas is inital value
+    // array.reduce(reducer,10);
+    //10, 2 , 1 , 12
+
+    let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+
+    let countedNames = names.reduce(function (allNames, name) {
+        if (name in allNames) {
+            allNames[name]++
+        }
+        else {
+            allNames[name] = 1
+        }
+        return allNames
+    }, {})
+
+    console.log(countedNames)
+
+
+    let people = [
+        { name: 'Alice', age: 21 },
+        { name: 'Max', age: 20 },
+        { name: 'Jane', age: 20 }
+    ];
+
+    function groupBy(objectArray, property) {
+        return objectArray.reduce(function (acc, obj) {
+            let key = obj[property]
+            if (!acc[key]) {
+                acc[key] = []
+            }
+            acc[key].push(obj)
+            return acc
+        }, {})
+    }
+
+    let groupedPeople = groupBy(people, 'age')
+
+    console.log(groupedPeople
+    )
+
+
+
+
+
+
+    let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+    let myArrayWithNoDuplicates = myArray.reduce(function (previousValue, currentValue) {
+        if (previousValue.indexOf(currentValue) === -1) {
+            previousValue.push(currentValue)
+        }
+        return previousValue
+    }, [])
+
+    console.log(myArray)
+    console.log(myArrayWithNoDuplicates)
+
+
+
+
+
+
+
+</script>
+
+<script>
+    function total(arr) {
+        return arr.reduce((x, y) => x + y)
+    }
+
+    console.log(total([1, 2, 3])); // 6
 </script>

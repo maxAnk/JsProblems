@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Date function test
+    </h1>
+    <h2 id="t11"></h2>
+    <br>
+    <h2 id="diffMin"></h2>
+    <br>
+    <button onclick="timeone()"> timeone</button>
+    <button onclick="getDiffTimestamp()"> getMinutes()</button>
+
+
+</body>
+
+</html>
+
+<script>
+    var t1 = 0;
+    const timeone = () => {
+
+        t1 = Date.now();
+        document.getElementById("t11").innerHTML = t1;
+    }
+    const getDiffTimestamp = () => {
+        var t2 = Date.now();
+        var diff = t2 - t1;
+        var diffmin = Math.floor(diff / 1000 / 60);
+        document.getElementById("diffMin").innerHTML = diffmin;
+
+    }
+
+</script>
