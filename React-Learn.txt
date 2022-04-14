@@ -1,0 +1,101 @@
+React JS API CALL
+
+React JS Thunk Middlwer = running *
+
+React JS Redux = running *
+
+React Router
+
+HOC = done
+
+
+pure component = done
+
+controll/uncontroll component
+
+Memo() = done useMemo hook similar like pure component in class 
+
+ref = done
+
+AJAX API
+
+Context API
+
+Middleware Thunk , Saga
+
+
+React LifeCycles
+
+react Hooks useref
+
+Recall 
+
+redux devtool = running *
+
+
+spread ... operator rest = done
+
+
+npm install --save react-navigation-header-buttons
+https://cognizant.udemy.com/course/react-native-the-practical-guide/learn/lecture/15674826#overview
+
+
+
+
+https://cognizant.udemy.com/course/react-native-the-practical-guide/learn/lecture/15674832#overview
+
+
+
+https://gitlab.com/ntgfreight/freighthawk/cognizant/carrier-self-service-mobile/-/tree/develop
+
+
+ankur.das@ntgfreight.com
+RNA
+
+
+*clean project
+./gradlew clean  
+
+*build project
+./gradlew build
+
+*build for debug package
+./gradlew assembleDebug or ./gradlew aD
+
+*build for release package
+./gradlew assembleRelease or ./gradlew aR
+
+*build for release package and install
+./gradlew installRelease or ./gradlew iR Release
+
+*build for debug package and install
+./gradlew installDebug or ./gradlew iD Debug
+
+*uninstall release package
+./gradlew uninstallRelease or ./gradlew uR
+
+*uninstall debug package
+./gradlew uninstallDebug or ./gradlew uD 
+
+*all the above command + "--info" or "--debug" or "--scan" or "--stacktrace"
+
+
+
+
+C:\Users\Ankur\React_Application\CTS\NTG\carrier-self-service-mobile\node_modules\metro-hermes-compiler\src\emhermesc.js:81
+          throw ex;
+          ^
+
+Error: EPERM: operation not permitted, lstat 'C:\Users\Ankur\React_Application\CTS\NTG\carrier-self-service-mobile\node_modules\@react-native-firebase\messaging\android\build'
+Emitted 'error' event on NodeWatcher instance at:
+    at NodeWatcher.<anonymous> (C:\Users\Ankur\React_Application\CTS\NTG\carrier-self-service-mobile\node_modules\sane\src\node_watcher.js:291:16)
+    at callback (C:\Users\Ankur\React_Application\CTS\NTG\carrier-self-service-mobile\node_modules\graceful-fs\polyfills.js:299:20)
+    at FSReqCallback.oncomplete (node:fs:198:21) {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'lstat',
+  path: 'C:\\Users\\Ankur\\React_Application\\CTS\\NTG\\carrier-self-service-mobile\\node_modules\\@react-native-firebase\\messaging\\android\\build'
+}
+
+solution : npm i location/firbase app / firebase message/ 
+separetly and use legacy peear
